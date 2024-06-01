@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Generate custom Bible reading plans in CSV, ICS, or plain text formats. You choose the dates, days of the week, books, and their order." />
+    <meta name="keywords" content="Bible, custom Bible, plan, reading plan" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Ryan Cornett">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="/styles.css">
+    <title>Custom Bible Plan</title>
+    <script type="module" crossorigin src="/assets/index-DC3i7B__.js"></script>
+  </head>
+  <body>
+    <nav>
+      <header>
+        <h1>CustomBiblePlan.com</h1>
+        <a id="support" href="https://ko-fi.com/ryancornett" target="_blank">
+          <h6>Support the site</h6>
+        </a>
+      </header>
+    </nav>
+
+    <main>
+      <article>
+        <div class="form-column left">
+          <div class="form-element">
+            <label for="plan-name" class="fw-bold text-uppercase"><span class="material-symbols-outlined" aria-hidden="true">info</span> Plan name</label>
+            <input id="plan-name" aria-label="plan name input field" type="text" autocomplete="on" required="">
+          </div>
+        
+          <div class="form-element">
+            <label for="start"><span class="material-symbols-outlined" aria-hidden="true">play_circle</span> Start date</label>
+            <input type="date" id="start-date" name="start" />
+          </div>
+        
+          <div class="form-element">
+            <label for="end"><span class="material-symbols-outlined" aria-hidden="true">stop_circle</span> End date</label>
+            <input type="date" id="end-date" name="end" />
+          </div>
+          <div class="form-element">
+            <label for="time"><span class="material-symbols-outlined" aria-hidden="true">schedule</span> Reading time</label>
+            <select name="time" id="time"></select>
+          </div>
+        
+          <div class="form-element flex-d-column">
+            <label for="days"><span class="material-symbols-outlined" aria-hidden="true">format_list_numbered</span> Reading days</label>
+            <div class="days-checkboxes"></div>
+          </div>
+        </div>
+        <div class="form-column right">
+          <h3><span class="material-symbols-outlined" aria-hidden="true">book_2</span> Books <span class="badge">Add in desired reading order</span></h3>
+          <div class="testament-label">
+            <h4 for="old-testament">Old Testament</h4>
+            <span class="expand expand-ot">+</span>
+          </div>
+          <label class="select-all"><input type="checkbox" id="ot-master-checkbox"> Select All</label>
+          <div class="ot-checkboxes"></div>
+          <div class="testament-label">
+            <h4 for="new-testament">New Testament</h4>
+            <span class="expand expand-nt">+</span>
+          </div>
+          <label class="select-all"><input type="checkbox" id="nt-master-checkbox"> Select All</label>
+          <div class="nt-checkboxes"></div>
+        </div>
+      </article>
+
+      <div class="plan-btns">
+        <button id="csv"><span class="material-symbols-outlined" aria-hidden="true">format_list_bulleted</span> CSV</button>
+        <button id="ical"><span class="material-symbols-outlined" aria-hidden="true">calendar_month</span> iCal</button>
+        <button id="print"><span class="material-symbols-outlined" aria-hidden="true">print</span> Print</button>
+        <button id="clear"><span class="material-symbols-outlined" aria-hidden="true">free_cancellation</span> Clear</button>
+      </div>
+      
+    </main>
+
+    <aside></aside>
+
+    <footer>
+      <p>Built by <a href="https://linktr.ee/ryancornett" class="footer-link" target="_blank">Ryan Cornett</a> 
+        | <a href="https://docs.google.com/forms/d/e/1FAIpQLSeHzGW2UyE6OCmQUQkLGlFTQczhYHohPEBRSLGTXzh4Fwk6bw/viewform?usp=sf_link" class="footer-link" target="_blank">Send</a> feedback</p>
+    </footer>
+  </body>
+</html>
