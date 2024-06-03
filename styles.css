@@ -228,22 +228,23 @@ aside {
     margin: auto;
     display: none;
     padding: 1rem;
-    color: white;
+    background-color: white;
+    color: black;
     border: solid rgb(112, 110, 110) 2px;
 }
 
 aside.error {
-    background-color: red;
+    border-color: red;
     display: unset;
 }
 
 aside.alert {
-    background-color: rgb(186, 186, 22);
+    border-color: rgb(234, 223, 8);
     display: unset;
 }
 
 aside.success {
-    background-color: rgb(105, 164, 16);
+    border-color: rgb(126, 206, 5);
     display: unset;
 }
 

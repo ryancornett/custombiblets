@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Print your plan" />
+    <meta name="description" content="Generate custom Bible reading plans in CSV, ICS, or plain text formats. You choose the dates, days of the week, books, and their order." />
+    <meta name="keywords" content="Bible, custom Bible, plan, reading plan" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Ryan Cornett">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Print your plan</title>
+  </head>
+  <body style="background-image: unset; background-color: white;">
+    <div id="print-name"></div>
+    <div class="print-list"></div>
+    <script>
+        const calendarData = JSON.parse(sessionStorage.getItem('calendarData'));
+        if (calendarData) {
+            document.title = calendarData.name;
+            document.getElementById('print-name').innerText = calendarData.name;
+            const list = document.querySelector('.print-list');
+            const entries = Object.entries(calendarData);
+            entries.forEach(([key, value]) => {
+                if (key != "name") {
+                    let day = document.createElement('div');
+                    day.classList.add('print-day')
+                    let date = document.createElement('p');
+                    date.classList.add('print-date');
+                    date.innerText = key;
+                    let reading = document.createElement('p');
+                    reading.classList.add('print-reading');
+                    reading.innerText = value;
+                    day.appendChild(date);
+                    day.appendChild(reading);
+                    list.appendChild(day);
+                }
+            });
+            window.onload = () => {
+                window.print();
+            };
+        } else {
+            alert('No calendar data found');
+        }
+    </script>
+  </body>
+</html>
